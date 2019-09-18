@@ -8,6 +8,6 @@
     <link rel="html" href="index.html">
 </head>
 <body>
-<h1>sadakeizyu</h1>
+<h1 style="border-bottom:solid 3px; font-size:60px;">{{ $_GET['hotelname'] }}</h1>
 </body>
 </html>

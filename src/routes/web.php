@@ -14,8 +14,8 @@
 Route::get('/', function () {
     return view('index');
 });
-Route::get('index', function () {
-    return view('/reservation_page');
+Route::get('/reservation_page/', function () {
+    return view('reservation_page');
 });
 
 
