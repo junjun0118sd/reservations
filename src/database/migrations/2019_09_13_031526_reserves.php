@@ -14,8 +14,7 @@ class Reserve extends Migration
     public function up()
     {
         Schema::table('reservations', function (Blueprint $table) {
-            //
-        });
+
     }
 
     /**

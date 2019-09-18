@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ホテル予約管理システム</title>
-    <link rel="stylesheet" href="stylesheet.css">
+    <link type="text/css" rel="stylesheet" href="stylesheet.css">
 </head>
 
 <body>
@@ -36,7 +36,7 @@
         </div>
 ​
         <div class="panel-body">
-            <table border="1" class="table table-striped task-table">
+            <table border="1" class="table table-striped reservations-table">
 ​
                 <!-- テーブルヘッダ -->
                 <thead>
@@ -53,6 +53,10 @@
 ​
                 <!-- テーブル本体 -->
                 <tbody>
+
+                    <tr>
+
+                    </tr>
                 </tbody>
             </table>
         </div>
