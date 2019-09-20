@@ -17,6 +17,7 @@
     <main>
         <form action="{{url('/form')}}"  method="post" >
             <p class="f-size-up">ホテル名一覧<br>
+                @csrf
             <select style="width:300px; font-size: 40px;" name="hname">
                 <option value="ホテルA">ホテルA</option>
                 <option value="ホテルB">ホテルB</option>

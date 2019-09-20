@@ -1,3 +1,6 @@
+@extends('layouts.app')
+@section('content')
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -8,14 +11,19 @@
     <link rel="html" href="index.html">
 </head>
 <body>
-<h1 style="border-bottom:solid 3px; font-size:60px;">{{['$hname']}}</h1>
+<h1 style="border-bottom:solid 3px; font-size:60px;">{{$hname}}</h1>
 <form action="">
-<input type="text" value="{{$hname}}" name="hname" id="hname">
-check in<input type="date" name="checkin" style="width:200px;">
+    @csrf
+<!--ホテル名-->
+<input readonly type="text" value="{{$hname}}" name="hname">
 <br>
-check out<input type="date" name="checkout" style="width:200px;">
+<!--チェックイン-->
+check in<input type="date" name="checkin" style="width:200px;"　value="<?php echo date('y-m-j');?>">
 <br>
-<input action="index.blade.php"style="height:70px; width: 100px;" type="submit" value="予約" >
+<!--チェックアウト-->
+check out<input type="date" name="checkout" style="width:200px;" value="<?php echo date('y-m-j');?>">
+<br>
+<input action="web.php"style="height:70px; width: 100px;" type="submit" value="予約" >
 
 </form>
 </body>

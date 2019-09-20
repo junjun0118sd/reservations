@@ -1,5 +1,5 @@
 <?php
-use App\reservation;
+use App\Reservation;
 use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +19,19 @@ Route::get('/reservation_page/', function () {
     return view('reservation_page');
 });
 Route::post('/form', function (Request $request) {
+
     $hname=$request->input('hname');
     return view('/reservation_page',compact(['hname']));
+});
 
+route::post('/rserve',function(request $request){
+//reservation_pageの情報をDBに登録
+$reserve = new Reservation;
+
+$reserve->hname=$request->hname;
+$reserve->checkin=$request->checkin;
+$reserve->checkout=$request->checkout;
+$reserve->save();
+
+return redirect('/');
+});
