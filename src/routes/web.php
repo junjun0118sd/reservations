@@ -1,4 +1,5 @@
 <?php
+
 use App\Reservation;
 use Illuminate\Http\Request;
 /*
