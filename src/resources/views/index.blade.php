@@ -15,9 +15,9 @@
 
     </header>
     <main>
-        <form action="/reservation_page/"  method="get">
+        <form action="{{url('/form')}}"  method="post" >
             <p class="f-size-up">ホテル名一覧<br>
-            <select style="width:300px; font-size: 40px;"  id="hotelname" class="" name="hotelname">
+            <select style="width:300px; font-size: 40px;" name="hname">
                 <option value="ホテルA">ホテルA</option>
                 <option value="ホテルB">ホテルB</option>
                 <option value="ホテルC">ホテルC</option>

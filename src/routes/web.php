@@ -1,5 +1,6 @@
 <?php
-
+use App\reservation;
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,5 +18,7 @@ Route::get('/', function () {
 Route::get('/reservation_page/', function () {
     return view('reservation_page');
 });
-
+Route::post('/form', function (Request $request) {
+    $hname=$request->input('hname');
+    return view('/reservation_page',compact(['hname']));
 

@@ -7,10 +7,10 @@
     <title>予約日時</title>
     <link rel="html" href="index.html">
 </head>
-<body style="font-family:monospace">
-<h1 style="border-bottom:solid 3px; font-size:60px;">{{ $_GET['hotelname'] }}</h1>
+<body>
+<h1 style="border-bottom:solid 3px; font-size:60px;">{{['$hname']}}</h1>
 <form action="">
-<h1>{{ $_GET['hotelname'] }}</h1>
+<input type="text" value="{{$hname}}" name="hname" id="hname">
 check in<input type="date" name="checkin" style="width:200px;">
 <br>
 check out<input type="date" name="checkout" style="width:200px;">
