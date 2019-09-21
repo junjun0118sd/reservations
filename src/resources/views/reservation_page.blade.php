@@ -17,13 +17,16 @@
 <form action="{{url('/reserve')}}" method="post">
         @csrf
         <!--ホテル名-->
+        <label for="hname">予約ホテル</label>
         <input readonly type="text" value="{{$hname}}" name="hname">
         <br>
         <!--チェックイン-->
-        check in<input type="date" name="checkin" style="width:200px;" 　value="<?php echo date('y-m-j'); ?>">
+　　　　　<label for="checkin">Check In</label>
+　　　　　<input type="date" name="checkin" style="width:200px;" 　value="<?php echo date('y-m-j'); ?>">
         <br>
         <!--チェックアウト-->
-        check out<input type="date" name="checkout" style="width:200px;" value="<?php echo date('y-m-j'); ?>">
+        <label for="checkout">Check Out</label>
+        <input type="date" name="checkout" style="width:200px;" value="<?php echo date('y-m-j'); ?>">
         <br>
         <input style="height:70px; width: 100px;" type="submit" value="予約">
 

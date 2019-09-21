@@ -14,11 +14,7 @@ class Reserve extends Migration
     public function up()
     {
         Schema::table('reservations', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('hname');
-            $table->date('chackin');
-            $table->date('checkout');
-            $table->timestamps()
+
         });
 
     /**
