@@ -43,22 +43,46 @@
                 <!-- テーブルヘッダ -->
                 <thead>
                     <th>予約番号</th>
-                    <th>&nbsp;</th>
+
                     <th>HOTEL NAME</th>
-                    <th>&nbsp;</th>
+
                     <th>check in</th>
-                    <th>&nbsp;</th>
+
                     <th>check out</th>
-                    <th>&nbsp;</th>
+
 
                 </thead>
 ​
                 <!-- テーブル本体 -->
                 <tbody>
-
+                @foreach($reserves as $reserve)
                     <tr>
+                        <td class="table-text">
+                        <div>{{$reserve->id}}</div>
+                        </td>
 
+                        <td class="table-text">
+                        <div>{{$reserve->hname}}</div>
+
+                        </td>
+                        <td class="table-text">
+                        <div>{{$reserve->checkin}}</div>
+
+                        </td>
+                        <td class="table-text">
+                        <div>{{$reserve->checkout}}</div>
+                        </td>
+                        <td>
+                        <form action="{{url('reserve/'.$reserve->id)}}" method="POST">
+                        @csrf
+                        {{ method_field('DELETE')}}
+                        <button type="submit" class="btn btn-danger">
+                            <i class="fa fa-trash"></i>予約消去
+                        </button>
+                        </form>
+                        </td>
                     </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>

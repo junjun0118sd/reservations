@@ -1,6 +1,6 @@
 <?php
 
-use App\Reservation;
+use App\Reserve;
 use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
@@ -25,14 +25,30 @@ Route::post('/form', function (Request $request) {
     return view('/reservation_page',compact(['hname']));
 });
 
-route::post('/rserve',function(request $request){
+Route::post('/reserve',function(Request $request){
 //reservation_pageの情報をDBに登録
-$reserve = new Reservation;
+$reserve = new Reserve;
 
 $reserve->hname=$request->hname;
 $reserve->checkin=$request->checkin;
 $reserve->checkout=$request->checkout;
 $reserve->save();
+
+return redirect('/');
+});
+
+//予約一覧
+Route::get('/',function(){
+    $reserves=Reserve::orderBy('created_at','asc')->get();
+
+    return view('index',[
+        'reserves'=>$reserves
+    ]);
+
+});
+//予約消去
+Route::delete('/reserve/{reserve}',function(Reserve $reserve){
+$reserve->delete();
 
 return redirect('/');
 });
