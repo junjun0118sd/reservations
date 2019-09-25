@@ -14,7 +14,7 @@
 
 <body>
     <h1 style="border-bottom:solid 3px; font-size:60px;">{{$hname}}</h1>
-<form action="{{url('/reserve')}}" method="post">
+    <form action="{{url('/reserve')}}" method="post">
         @csrf
         <!--ホテル名-->
         <label for="hname">予約ホテル</label>
@@ -22,26 +22,26 @@
         <br>
         <br>
         <!--チェックイン-->
-　　　　　<label for="checkin">チェックイン</label>
-　　　　　<input type="date" name="checkin" style="width:200px;" 　value="<?php echo date('y-m-j'); ?>">
+        　　　　　<label for="checkin">チェックイン</label>
+        　　　　　<input type="date" name="checkin" style="width:200px;" 　value="<?php echo date('y-m-j'); ?>">
         <br>
         <br>
         <!--チェックアウト-->
         <label for="checkout">チェックアウト</label>
         <input type="date" name="checkout" style="width:200px;" value="<?php echo date('y-m-j'); ?>">
-<br>
-<br>
-<!--インタイム-->
-<label for="intime" >in時間</label>
-<input type="time" step="900" name="intime">
-<br>
-<br>
-<!--アウトタイム-->
-<label for="outtime">out時間</label>
-<input type="time" step="900" name="outtime">
+        <br>
+        <br>
+        <!--インタイム-->
+        <label for="intime">in時間</label>
+        <input type="time" step="900" name="intime" min="12:00" max="17:00">
+        <br>
+        <br>
+        <!--アウトタイム-->
+        <label for="outtime">out時間</label>
+        <input type="time" step="900" name="outtime" min="08:00" max="11:00">
 
 
-      <br>
+        <br>
         <input style="height:70px; width: 100px;" type="submit" value="予約">
 
     </form>
