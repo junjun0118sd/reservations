@@ -6,17 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ホテル予約管理システム</title>
-    <link type="text/css" rel="stylesheet" href="stylesheet.css">
+    <!--htmlにcss適用-->
+<link rel="stylesheet" href="{{asset('css/stylesheet.css')}}">
+
 </head>
 
 <body>
     <header>
-        <h1>Hotel Reservation System</h1>
+        <h1>Hotel Reservation System!!</h1>
+        <h4>チェックインは１２時〜１７時まで、チェックアウトは８時から１１時までにお願い致します。</h4>
 
     </header>
     <main>
         <form action="{{url('/form')}}" method="post">
-            <p class="f-size-up">ホテル名一覧<br>
+            <p style="font-size:25px;">ホテル名一覧<br>
                 @csrf
                 <select style="width:300px; font-size: 40px;" name="hname">
                     <option value="ホテルA">ホテルA</option>
@@ -49,28 +52,42 @@
 
                         <th>check out</th>
 
+                        <th>intime</th>
+
+                        <th>outtime</th>
+
 
                     </thead>
                     ​
                     <!-- テーブル本体 -->
                     <tbody>
                         @foreach($reserves as $reserve)
+                        <!--予約番号-->
                         <tr>
                             <td class="table-text">
                                 <div>{{$reserve->id}}</div>
                             </td>
-
+                        <!--ホテル名-->
                             <td class="table-text">
                                 <div>{{$reserve->hname}}</div>
 
                             </td>
+                            <!--チェックイン-->
                             <td class="table-text">
                                 <div>{{$reserve->checkin}}</div>
-
                             </td>
+                            <!--チェックアウト-->
                             <td class="table-text">
                                 <div>{{$reserve->checkout}}</div>
                             </td>
+                            <!--チェックイン時間-->
+                            <td class="table-text">
+                            <div>{{$reserve->intime}}</div>
+                            </td>
+                            <!--チェックアウト時間-->
+                            <td class="table-text">
+                            <div>{{$reserve->outtime}}</div>
+                                </td>
 
                             <td>
                                 <!--消去ボタン-->
