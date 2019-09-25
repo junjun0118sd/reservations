@@ -20,14 +20,17 @@
         <label for="hname">予約ホテル</label>
         <input readonly type="text" value="{{$hname}}" name="hname">
         <br>
+        <br>
         <!--チェックイン-->
 　　　　　<label for="checkin">チェックイン</label>
 　　　　　<input type="date" name="checkin" style="width:200px;" 　value="<?php echo date('y-m-j'); ?>">
         <br>
+        <br>
         <!--チェックアウト-->
         <label for="checkout">チェックアウト</label>
         <input type="date" name="checkout" style="width:200px;" value="<?php echo date('y-m-j'); ?>">
-        <br>
+
+      <br>
         <input style="height:70px; width: 100px;" type="submit" value="予約">
 
     </form>
