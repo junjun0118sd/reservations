@@ -2,6 +2,9 @@
 
 use App\Reserve;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -54,3 +57,4 @@ $reserve->delete();
 
 return redirect('/');
 });
+

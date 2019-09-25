@@ -90,6 +90,8 @@
                                 </td>
 
                             <td>
+                                <!--変更機能-->
+
                                 <!--消去ボタン-->
                                 　　　　　　<form action="{{url('reserve/'.$reserve->id)}}" method="POST">
                                     @csrf

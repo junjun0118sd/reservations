@@ -10,6 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>予約日時</title>
     <link rel="html" href="index.html">
+    <link rel="stylesheet" href="{{asset('css/stylesheet.css')}}">
 </head>
 
 <body>
@@ -17,6 +18,7 @@
     <form action="{{url('/reserve')}}" method="post">
         @csrf
         <!--ホテル名-->
+
         <label for="hname">予約ホテル</label>
         <input readonly type="text" value="{{$hname}}" name="hname">
         <br>
@@ -31,6 +33,7 @@
         <input type="date" name="checkout" style="width:200px;" value="<?php echo date('y-m-j'); ?>">
         <br>
         <br>
+
         <!--インタイム-->
         <label for="intime">in時間</label>
         <input type="time" step="900" name="intime" min="12:00" max="17:00">
@@ -43,6 +46,7 @@
 
         <br>
         <input style="height:70px; width: 100px;" type="submit" value="予約">
+
 
     </form>
 </body>
