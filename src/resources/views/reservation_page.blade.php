@@ -38,7 +38,7 @@
         <br>
         <!--アウトタイム-->
         <label for="outtime">out時間</label>
-        <input type="time" step="900" name="outtime" min="08:00" max="11:00">
+        <input type="time" step="900" name="outtime" min="05:00" max="11:00">
 
 
         <br>
