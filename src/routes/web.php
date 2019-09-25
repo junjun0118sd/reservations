@@ -32,6 +32,8 @@ $reserve = new Reserve;
 $reserve->hname=$request->hname;
 $reserve->checkin=$request->checkin;
 $reserve->checkout=$request->checkout;
+$reserve->intime=$request->intime;
+$reserve->outtime=$request->outtime;
 $reserve->save();
 
 return redirect('/');

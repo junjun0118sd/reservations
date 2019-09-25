@@ -18,6 +18,8 @@ class Reservations extends Migration
             $table->string('hname');
             $table->date('checkin');
             $table->date('checkout');
+            $table->time('intime');
+            $table->time('outtime');
             $table->timestamps();
         });
     }

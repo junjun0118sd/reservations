@@ -29,6 +29,17 @@
         <!--チェックアウト-->
         <label for="checkout">チェックアウト</label>
         <input type="date" name="checkout" style="width:200px;" value="<?php echo date('y-m-j'); ?>">
+<br>
+<br>
+<!--インタイム-->
+<label for="intime" >in時間</label>
+<input type="time" step="900" name="intime">
+<br>
+<br>
+<!--アウトタイム-->
+<label for="outtime">out時間</label>
+<input type="time" step="900" name="outtime">
+
 
       <br>
         <input style="height:70px; width: 100px;" type="submit" value="予約">
