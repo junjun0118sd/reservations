@@ -6,7 +6,6 @@
 
 
 
-<body>
     <header>
         <h1>Hotel Reservation System!!</h1>
         <h4>チェックインは12時〜17時まで、チェックアウトは5時から11時までにお願い致します。</h4>
@@ -26,7 +25,7 @@
             <input style="width: 100px;" type="submit" value="予約" button type="button" class="btn btn-outline-success">
         </form>
     </main>
-    <div>
+
 
 
         <div class="panel panel-default">
@@ -35,7 +34,7 @@
             </div>
             ​
             <div class="panel-body">
-                <table border="1" class="table table-striped reservations-table" 　class="table table-striped">
+                <table border="1" class="table table-striped reservations-table" class="table table-striped">
                     ​
                     <!-- テーブルヘッダ -->
                     <thead>
@@ -50,8 +49,9 @@
                         <th>intime</th>
 
                         <th>outtime</th>
-
-　　　　　　　　　　　　　　　<th>　確認　</th>
+　　　　　　　　　　　　　　　
+                        　<th>確認</th>
+　　　　　　　　　　　　　
                     </thead>
                     ​<!-- テーブル本体 -->
                     <tbody>
@@ -83,9 +83,10 @@
                                 <div>{{$reserve->outtime}}</div>
                             </td>
                             <!--消去ボタン-->
+                            <td>
                             <form action="{{url('reserve/'.$reserve->id)}}" method="POST" button type="button" class="btn btn-warning">
                             @csrf
-                            {{ method_field('DELETE')}}
+                            {{method_field('DELETE')}}
                              <button type="submit" class="btn btn-danger">
                                 <i class="fa fa-trash"></i>予約消去
                                 </button>
@@ -97,9 +98,4 @@
                 </table>
             </div>
         </div>
-    </div>
-
-</body>
-
-</html>
 @endsection
