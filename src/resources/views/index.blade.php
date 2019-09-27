@@ -8,6 +8,7 @@
     <title>ホテル予約管理システム</title>
     <!--htmlにcss適用-->
 <link rel="stylesheet" href="{{asset('css/stylesheet.css')}}">
+<link rel= "stylesheet" href= "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity= "sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin= "anonymous" >
 
 </head>
 
@@ -18,7 +19,7 @@
 
     </header>
     <main>
-        <form action="{{url('/form')}}" method="post">
+        <form action="{{url('/form')}}" method="post"  >
             <p style="font-size:25px;">ホテル名一覧<br>
                 @csrf
                 <select style="width:300px; font-size: 40px;" name="hname">
@@ -28,7 +29,7 @@
                     <option value="ホテルD">ホテルD</option>
                     <option value="ホテルE">ホテルE</option>
                 </select></p>
-            <input style="width: 100px;" type="submit" value="予約">
+            <input style="width: 100px;" type="submit" value="予約" button type= "button" class= "btn btn-outline-success" >
         </form>
     </main>
     <div>
@@ -40,7 +41,7 @@
             </div>
             ​
             <div class="panel-body">
-                <table border="1" class="table table-striped reservations-table">
+                <table border="1" class="table table-striped reservations-table"　class="table table-striped">
                     ​
                     <!-- テーブルヘッダ -->
                     <thead>
@@ -55,6 +56,8 @@
                         <th>intime</th>
 
                         <th>outtime</th>
+
+                        <th>確認</th>
 
 
                     </thead>
@@ -93,7 +96,7 @@
                                 <!--変更機能-->
 
                                 <!--消去ボタン-->
-                                　　　　　　<form action="{{url('reserve/'.$reserve->id)}}" method="POST">
+                                　　　　　　<form action="{{url('reserve/'.$reserve->id)}}" method="POST" button type= "button" class= "btn btn-warning" >
                                     @csrf
                                     {{ method_field('DELETE')}}
                                     <button type="submit" class="btn btn-danger">

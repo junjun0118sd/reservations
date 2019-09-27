@@ -11,6 +11,7 @@
     <title>予約日時</title>
     <link rel="html" href="index.html">
     <link rel="stylesheet" href="{{asset('css/stylesheet.css')}}">
+    <link rel= "stylesheet" href= "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity= "sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin= "anonymous" >
 </head>
 
 <body>
@@ -45,7 +46,7 @@
 
 
         <br>
-        <input style="height:70px; width: 100px;" type="submit" value="予約">
+        <input style="height:70px; width: 100px;" type="submit" value="予約" button type= "button" class= "btn btn-outline-success" 　class=”form-control”>
 
 
     </form>
