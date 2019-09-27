@@ -1,20 +1,9 @@
 @extends('layouts.app')
+@section('title','予約ページ')
+
 @section('content')
 
-<!DOCTYPE html>
-<html lang="ja">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>予約日時</title>
-    <link rel="html" href="index.html">
-    <link rel="stylesheet" href="{{asset('css/stylesheet.css')}}">
-    <link rel= "stylesheet" href= "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity= "sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin= "anonymous" >
-</head>
-
-<body>
     <h1 style="border-bottom:solid 3px; font-size:60px;">{{$hname}}</h1>
     <form action="{{url('/reserve')}}" method="post">
         @csrf
@@ -25,8 +14,8 @@
         <br>
         <br>
         <!--チェックイン-->
-        　　　　　<label for="checkin">チェックイン</label>
-        　　　　　<input type="date" name="checkin" style="width:200px;" 　value="<?php echo date('y-m-j'); ?>">
+        <label for="checkin">チェックイン</label>
+　　　　　<input type="date" name="checkin" style="width:200px;" 　value="<?php echo date('y-m-j'); ?>">
         <br>
         <br>
         <!--チェックアウト-->
@@ -43,14 +32,12 @@
         <!--アウトタイム-->
         <label for="outtime">out時間</label>
         <input type="time" step="900" name="outtime" min="05:00" max="11:00">
-
-
         <br>
         <input style="height:70px; width: 100px;" type="submit" value="予約" button type= "button" class= "btn btn-outline-success" 　class=”form-control”>
 
 
     </form>
-</body>
+
 
 </html>
 

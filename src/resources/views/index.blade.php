@@ -1,16 +1,10 @@
-<!DOCTYPE html>
-<html lang="ja">
+@extends('layouts.app')
+@section('title','ホテル予約管理システム')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ホテル予約管理システム</title>
-    <!--htmlにcss適用-->
-<link rel="stylesheet" href="{{asset('css/stylesheet.css')}}">
-<link rel= "stylesheet" href= "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity= "sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin= "anonymous" >
+@section('content')
 
-</head>
+
+
 
 <body>
     <header>
@@ -19,7 +13,7 @@
 
     </header>
     <main>
-        <form action="{{url('/form')}}" method="post"  >
+        <form action="{{url('/form')}}" method="post">
             <p style="font-size:25px;">ホテル名一覧<br>
                 @csrf
                 <select style="width:300px; font-size: 40px;" name="hname">
@@ -29,7 +23,7 @@
                     <option value="ホテルD">ホテルD</option>
                     <option value="ホテルE">ホテルE</option>
                 </select></p>
-            <input style="width: 100px;" type="submit" value="予約" button type= "button" class= "btn btn-outline-success" >
+            <input style="width: 100px;" type="submit" value="予約" button type="button" class="btn btn-outline-success">
         </form>
     </main>
     <div>
@@ -41,7 +35,7 @@
             </div>
             ​
             <div class="panel-body">
-                <table border="1" class="table table-striped reservations-table"　class="table table-striped">
+                <table border="1" class="table table-striped reservations-table" 　class="table table-striped">
                     ​
                     <!-- テーブルヘッダ -->
                     <thead>
@@ -57,12 +51,9 @@
 
                         <th>outtime</th>
 
-                        <th>確認</th>
-
-
+　　　　　　　　　　　　　　　<th>　確認　</th>
                     </thead>
-                    ​
-                    <!-- テーブル本体 -->
+                    ​<!-- テーブル本体 -->
                     <tbody>
                         @foreach($reserves as $reserve)
                         <!--予約番号-->
@@ -70,7 +61,7 @@
                             <td class="table-text">
                                 <div>{{$reserve->id}}</div>
                             </td>
-                        <!--ホテル名-->
+                            <!--ホテル名-->
                             <td class="table-text">
                                 <div>{{$reserve->hname}}</div>
 
@@ -85,24 +76,20 @@
                             </td>
                             <!--チェックイン時間-->
                             <td class="table-text">
-                            <div>{{$reserve->intime}}</div>
+                                <div>{{$reserve->intime}}</div>
                             </td>
                             <!--チェックアウト時間-->
                             <td class="table-text">
-                            <div>{{$reserve->outtime}}</div>
-                                </td>
-
-                            <td>
-                                <!--変更機能-->
-
-                                <!--消去ボタン-->
-                                　　　　　　<form action="{{url('reserve/'.$reserve->id)}}" method="POST" button type= "button" class= "btn btn-warning" >
-                                    @csrf
-                                    {{ method_field('DELETE')}}
-                                    <button type="submit" class="btn btn-danger">
-                                        <i class="fa fa-trash"></i>予約消去
-                                    </button>
-                                </form>
+                                <div>{{$reserve->outtime}}</div>
+                            </td>
+                            <!--消去ボタン-->
+                            <form action="{{url('reserve/'.$reserve->id)}}" method="POST" button type="button" class="btn btn-warning">
+                            @csrf
+                            {{ method_field('DELETE')}}
+                             <button type="submit" class="btn btn-danger">
+                                <i class="fa fa-trash"></i>予約消去
+                                </button>
+                            </form>
                             </td>
                         </tr>
                         @endforeach
@@ -115,3 +102,4 @@
 </body>
 
 </html>
+@endsection
