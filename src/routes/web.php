@@ -15,46 +15,55 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//ホームのページを表示
 Route::get('/', function () {
     return view('index');
 });
+//２ページ目に移動
 Route::get('/reservation_page/', function () {
     return view('reservation_page');
 });
+//ホテル名を２ページ目に表示
 Route::post('/form', function (Request $request) {
 
-    $hname=$request->input('hname');
-    return view('/reservation_page',compact(['hname']));
+    $hname = $request->input('hname');
+    return view('/reservation_page', compact(['hname']));
 });
 
-Route::post('/reserve',function(Request $request){
-//reservation_pageの情報をDBに登録
-$reserve = new Reserve;
+Route::post('/reserve', function (Request $request) {
+    //エラー表示
+    $validator = Validator::make($request->all(), [
+        'checkin' => 'required',
+    ]);
+    if ($validator->faild()) {
+        return redirect('/')
+            ->withInput()
+            ->withErrors($validator);
+    }
+    //reservation_pageの情報をDBに登録
+    $reserve = new Reserve;
 
-$reserve->hname=$request->hname;
-$reserve->checkin=$request->checkin;
-$reserve->checkout=$request->checkout;
-$reserve->intime=$request->intime;
-$reserve->outtime=$request->outtime;
-$reserve->save();
+    $reserve->hname = $request->hname;
+    $reserve->checkin = $request->checkin;
+    $reserve->checkout = $request->checkout;
+    $reserve->intime = $request->intime;
+    $reserve->outtime = $request->outtime;
+    $reserve->save();
 
-return redirect('/');
+    return redirect('/');
 });
 
 //予約一覧
-Route::get('/',function(){
-    $reserves=Reserve::orderBy('created_at','asc')->get();
+Route::get('/', function () {
+    $reserves = Reserve::orderBy('created_at', 'asc')->get();
 
-    return view('index',[
-        'reserves'=>$reserves
+    return view('index', [
+        'reserves' => $reserves
     ]);
-
 });
 //予約消去
-Route::delete('/reserve/{reserve}',function(Reserve $reserve){
-$reserve->delete();
+Route::delete('/reserve/{reserve}', function (Reserve $reserve) {
+    $reserve->delete();
 
-return redirect('/');
+    return redirect('/');
 });
-
