@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-//ホームのページを表示
+//ホームをindexに指定して表示
 Route::get('/', function () {
     return view('index');
 });
