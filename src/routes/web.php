@@ -4,7 +4,6 @@ use App\Reserve;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,10 +18,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 });
+
 //２ページ目に移動
 Route::get('/reservation_page/', function () {
     return view('reservation_page');
 });
+
 //ホテル名を２ページ目に表示
 Route::post('/form', function (Request $request) {
 
@@ -35,14 +36,16 @@ Route::post('/reserve', function (Request $request) {
     $validator = Validator::make($request->all(), [
         'checkin' => 'required',
     ]);
-    if ($validator->faild()) {
+    if ($validator->fails()) {
         return redirect('/')
-            ->withInput()
-            ->withErrors($validator);
-    }
+
+        ->withInput()
+        ->withErrors($validator);
+
+    };
+
     //reservation_pageの情報をDBに登録
     $reserve = new Reserve;
-
     $reserve->hname = $request->hname;
     $reserve->checkin = $request->checkin;
     $reserve->checkout = $request->checkout;

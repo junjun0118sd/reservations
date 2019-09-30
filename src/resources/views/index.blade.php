@@ -21,6 +21,7 @@
                 <option value="ホテルC">ホテルC</option>
                 <option value="ホテルD">ホテルD</option>
                 <option value="ホテルE">ホテルE</option>
+                <option value="javascript:alert(1)">danger</option>
             </select></p>
         <input style="width: 100px;" type="submit" value="予約" button type="button" class="btn btn-outline-success">
     </form>

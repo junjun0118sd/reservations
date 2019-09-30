@@ -14,12 +14,12 @@
         <br>
         <!--チェックイン-->
         <label for="checkin">チェックイン</label>
-        <input type="date" name="checkin" style="width:200px;" value="<?php echo date('y-m-j'); ?>">　　　
+    <input type="date" name="checkin" style="width:200px;" value="{{date('Y-m-j')}}">　　　
         <br>
         <br>
         <!--チェックアウト-->
         <label for="checkout">チェックアウト</label>
-        <input type="date" name="checkout" style="width:200px;" value="<?php echo date('y-m-j'); ?>">
+    <input type="date" name="checkout" style="width:200px;" value="{{date('Y-m-j')}}">
         <br>
         <br>
         <!--インタイム-->
